@@ -11,7 +11,7 @@ def index():
         return jsonify({'prediction': None, 'message': 'sendme a text'})
 
     query = request.args('query')
-    model = load('./model/model.joblib')
+    model = load('model.joblib')
     lables = ['carros', 'economia', 'educacao',
               'esporte', 'musica', 'politica']
 
