@@ -10,11 +10,13 @@ def index():
     if 'query' not in request.args:
         return jsonify({'prediction': None, 'message': 'sendme a text'})
 
-    query = request.args('query')
+    query = request.args.get('query')
     model = load('model.joblib')
-    lables = ['carros', 'economia', 'educacao',
+    labels = ['carros', 'economia', 'educacao',
               'esporte', 'musica', 'politica']
 
     predict = model.predict([query])
 
-    prediction = lables[predict[0]]
+    prediction = labels[predict[0]]
+
+    return jsonify({'prediction': prediction})
