@@ -1,7 +1,7 @@
 from flask import Flask, jsonify, request
 from joblib import load
 
-app = Flask(__file__)
+app = Flask(__name__)
 
 
 @app.route('/')
