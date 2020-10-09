@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from flask import Flask, jsonify, request
 from joblib import load
 
@@ -11,8 +12,8 @@ def index():
 
     query = request.args('query')
     model = load('./model/model.joblib')
-    lables = ['carros', 'economia', 'educação',
-              'esporte', 'musica', 'política']
+    lables = ['carros', 'economia', 'educacao',
+              'esporte', 'musica', 'politica']
 
     predict = model.predict([query])
 
