@@ -1,6 +1,6 @@
 [[source]]
 
-url = "http://pypi.python.org/simple"
+url = "https://pypi.python.org/simple"
 verify_ssl = true
 
 [packages]
@@ -12,5 +12,4 @@ scikit-learn = "*"
 
 
 [requires]
-pip_version = "*"
-python_version = 3.6
+python_version = "3.7"

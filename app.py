@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from flask import Flask, jsonify, request
 from joblib import load
 
@@ -9,11 +10,13 @@ def index():
     if 'query' not in request.args:
         return jsonify({'prediction': None, 'message': 'sendme a text'})
 
-    query = request.args('query')
-    model = load('./model/model.joblib')
-    lables = ['carros', 'economia', 'educação',
-              'esporte', 'musica', 'política']
+    query = request.args.get('query')
+    model = load('model.joblib')
+    labels = ['carros', 'economia', 'educacao',
+              'esporte', 'musica', 'politica']
 
     predict = model.predict([query])
 
-    prediction = lables[predict[0]]
+    prediction = labels[predict[0]]
+
+    return jsonify({'prediction': prediction})
