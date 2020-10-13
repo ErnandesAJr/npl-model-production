@@ -19,4 +19,5 @@ def index():
 
     prediction = labels[predict[0]]
 
+
     return jsonify({'prediction': prediction})
